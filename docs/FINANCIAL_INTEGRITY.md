@@ -1,6 +1,6 @@
 # Financial Integrity
 
-Money is where retail software most often fails quietly: a payment recorded against no
+Money is where business software most often fails quietly: a payment recorded against no
 account, a double-posted retry, a balance drifting from its own history. HOROOMART's finance
 layer is built around one rule, enforced in a single place:
 
@@ -140,6 +140,6 @@ Preventive rules stop new problems. Detective controls find old ones:
 
 This is an **account ledger** (running balances per bank, wallet and cash account) with full
 transaction history, not a double-entry general ledger with a chart of accounts. It gives a
-retail business accurate cash positions, reconcilable balances and trustworthy profit
+trading business accurate cash positions, reconcilable balances and trustworthy profit
 reporting. Formal accrual accounting, deferred revenue and statutory financial statements
 belong in a general-ledger module. See [ARCHITECTURE.md](ARCHITECTURE.md#known-design-boundaries).

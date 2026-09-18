@@ -162,7 +162,7 @@ Stated plainly, because they shape what the system is suited for:
 - **Account ledger, not a general ledger.** Money is tracked as running balances per bank,
   wallet and cash account, with a full transaction trail (see
   [FINANCIAL_INTEGRITY.md](FINANCIAL_INTEGRITY.md)). There is no chart of accounts or
-  double-entry journal. That suits retail operations; formal accrual accounting belongs in a
+  double-entry journal. That suits trading operations; formal accrual accounting belongs in a
   dedicated accounting system or a future GL module.
 - **Single-region, single-database.** Scaling is vertical plus caching. The schema is fully
   indexed for its reporting paths, but horizontal sharding is not a goal.

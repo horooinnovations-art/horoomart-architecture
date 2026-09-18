@@ -1,9 +1,10 @@
 # HOROOMART — Architecture & Database Design
 
-**HOROOMART** is a multi-branch retail management platform built by
-[HOROO Innovations](https://github.com/horooinnovations-art). It runs point of sale, inventory,
-procurement, finance, HR and reporting for supermarket and wholesale businesses from a single
-system, with every record scoped to its organization.
+**HOROOMART** is a multi-branch business management (ERP) platform for trading businesses,
+built by [HOROO Innovations](https://github.com/horooinnovations-art). Supermarkets,
+wholesalers, distributors, pharmacies and multi-branch shops run point of sale, inventory and
+warehousing, procurement, credit sales, finance, HR and payroll, fixed assets and reporting
+from a single system, with every record scoped to its organization.
 
 This repository publishes the system's **design**: its database schema, domain architecture,
 financial-integrity model, security architecture and engineering practices. The application
