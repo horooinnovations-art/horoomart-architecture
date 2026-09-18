@@ -38,29 +38,29 @@ Every business record is scoped to an organization. Branches are points of sale;
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `legal_name` | `varchar(191)` | ✓ | `N` |  |  |
-| `tax_id` | `varchar(191)` | ✓ | `N` | UQ |  |
-| `registration_number` | `varchar(191)` | ✓ | `N` |  |  |
-| `email` | `varchar(191)` | ✓ | `N` |  |  |
-| `phone` | `varchar(191)` | ✓ | `N` |  |  |
-| `address` | `text` | ✓ | `N` |  |  |
-| `city` | `varchar(191)` | ✓ | `N` |  |  |
-| `state` | `varchar(191)` | ✓ | `N` |  |  |
-| `postal_code` | `varchar(191)` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `name` | `varchar(191)` |  |  |  |  |
+| `legal_name` | `varchar(191)` | ✓ |  |  |  |
+| `tax_id` | `varchar(191)` | ✓ |  | UQ |  |
+| `registration_number` | `varchar(191)` | ✓ |  |  |  |
+| `email` | `varchar(191)` | ✓ |  |  |  |
+| `phone` | `varchar(191)` | ✓ |  |  |  |
+| `address` | `text` | ✓ |  |  |  |
+| `city` | `varchar(191)` | ✓ |  |  |  |
+| `state` | `varchar(191)` | ✓ |  |  |  |
+| `postal_code` | `varchar(191)` | ✓ |  |  |  |
 | `country` | `varchar(191)` |  | `US` |  |  |
-| `logo` | `varchar(191)` | ✓ | `N` |  |  |
-| `website` | `varchar(191)` | ✓ | `N` |  |  |
+| `logo` | `varchar(191)` | ✓ |  |  |  |
+| `website` | `varchar(191)` | ✓ |  |  |  |
 | `currency` | `varchar(3)` |  | `ETB` |  |  |
 | `default_tax_rate` | `decimal(5,2)` |  | `15.00` |  |  |
 | `timezone` | `varchar(191)` |  | `UTC` |  |  |
-| `fiscal_year_start` | `date` | ✓ | `N` |  |  |
-| `settings` | `json` | ✓ | `N` |  |  |
+| `fiscal_year_start` | `date` | ✓ |  |  |  |
+| `settings` | `json` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (1)</summary>
 
@@ -72,24 +72,24 @@ Every business record is scoped to an organization. Branches are points of sale;
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `code` | `varchar(191)` |  | `N` | UQ |  |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `email` | `varchar(191)` | ✓ | `N` |  |  |
-| `phone` | `varchar(191)` | ✓ | `N` |  |  |
-| `address` | `text` | ✓ | `N` |  |  |
-| `city` | `varchar(191)` | ✓ | `N` |  |  |
-| `state` | `varchar(191)` | ✓ | `N` |  |  |
-| `postal_code` | `varchar(191)` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `code` | `varchar(191)` |  |  | UQ |  |
+| `name` | `varchar(191)` |  |  |  |  |
+| `email` | `varchar(191)` | ✓ |  |  |  |
+| `phone` | `varchar(191)` | ✓ |  |  |  |
+| `address` | `text` | ✓ |  |  |  |
+| `city` | `varchar(191)` | ✓ |  |  |  |
+| `state` | `varchar(191)` | ✓ |  |  |  |
+| `postal_code` | `varchar(191)` | ✓ |  |  |  |
 | `country` | `varchar(191)` |  | `US` |  |  |
-| `manager_id` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `opening_date` | `date` | ✓ | `N` |  |  |
-| `settings` | `json` | ✓ | `N` |  |  |
+| `manager_id` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `opening_date` | `date` | ✓ |  |  |  |
+| `settings` | `json` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -103,23 +103,23 @@ Every business record is scoped to an organization. Branches are points of sale;
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `manager_id` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `code` | `varchar(191)` |  | `N` | UQ |  |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `email` | `varchar(191)` | ✓ | `N` |  |  |
-| `phone` | `varchar(191)` | ✓ | `N` |  |  |
-| `address` | `text` | ✓ | `N` |  |  |
-| `city` | `varchar(191)` | ✓ | `N` |  |  |
-| `state` | `varchar(191)` | ✓ | `N` |  |  |
-| `postal_code` | `varchar(191)` | ✓ | `N` |  |  |
-| `country` | `varchar(191)` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `manager_id` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `code` | `varchar(191)` |  |  | UQ |  |
+| `name` | `varchar(191)` |  |  |  |  |
+| `email` | `varchar(191)` | ✓ |  |  |  |
+| `phone` | `varchar(191)` | ✓ |  |  |  |
+| `address` | `text` | ✓ |  |  |  |
+| `city` | `varchar(191)` | ✓ |  |  |  |
+| `state` | `varchar(191)` | ✓ |  |  |  |
+| `postal_code` | `varchar(191)` | ✓ |  |  |  |
+| `country` | `varchar(191)` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `settings` | `json` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `settings` | `json` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -133,16 +133,16 @@ Every business record is scoped to an organization. Branches are points of sale;
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` | ✓ | `N` | IX | → `organizations.id` (on delete cascade) |
-| `key` | `varchar(191)` |  | `N` |  |  |
-| `value` | `text` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` | ✓ |  | IX | → `organizations.id` (on delete cascade) |
+| `key` | `varchar(191)` |  |  |  |  |
+| `value` | `text` | ✓ |  |  |  |
 | `type` | `varchar(191)` |  | `string` |  |  |
-| `description` | `text` | ✓ | `N` |  |  |
+| `description` | `text` | ✓ |  |  |  |
 | `group` | `varchar(191)` |  | `general` | IX |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -160,39 +160,39 @@ Users, role-based permissions (Spatie model: roles are organization-scoped), 2FA
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` | ✓ | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete set null) |
-| `store_id` | `bigint unsigned` | ✓ | `N` | IX | → `stores.id` (on delete set null) |
-| `employee_id` | `varchar(191)` | ✓ | `N` | UQ |  |
-| `first_name` | `varchar(191)` |  | `N` |  |  |
-| `last_name` | `varchar(191)` |  | `N` |  |  |
-| `email` | `varchar(191)` |  | `N` | UQ |  |
-| `email_verified_at` | `timestamp` | ✓ | `N` |  |  |
-| `password` | `varchar(191)` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` | ✓ |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete set null) |
+| `store_id` | `bigint unsigned` | ✓ |  | IX | → `stores.id` (on delete set null) |
+| `employee_id` | `varchar(191)` | ✓ |  | UQ |  |
+| `first_name` | `varchar(191)` |  |  |  |  |
+| `last_name` | `varchar(191)` |  |  |  |  |
+| `email` | `varchar(191)` |  |  | UQ |  |
+| `email_verified_at` | `timestamp` | ✓ |  |  |  |
+| `password` | `varchar(191)` |  |  |  |  |
 | `must_change_password` | `tinyint(1)` |  | `0` |  |  |
-| `phone` | `varchar(191)` | ✓ | `N` |  |  |
-| `address` | `text` | ✓ | `N` |  |  |
-| `city` | `varchar(191)` | ✓ | `N` |  |  |
-| `state` | `varchar(191)` | ✓ | `N` |  |  |
-| `postal_code` | `varchar(191)` | ✓ | `N` |  |  |
+| `phone` | `varchar(191)` | ✓ |  |  |  |
+| `address` | `text` | ✓ |  |  |  |
+| `city` | `varchar(191)` | ✓ |  |  |  |
+| `state` | `varchar(191)` | ✓ |  |  |  |
+| `postal_code` | `varchar(191)` | ✓ |  |  |  |
 | `country` | `varchar(191)` |  | `US` |  |  |
-| `date_of_birth` | `date` | ✓ | `N` |  |  |
-| `hire_date` | `date` | ✓ | `N` |  |  |
-| `position` | `varchar(191)` | ✓ | `N` |  |  |
-| `department` | `varchar(191)` | ✓ | `N` |  |  |
-| `salary` | `text` | ✓ | `N` |  |  |
-| `avatar` | `varchar(191)` | ✓ | `N` |  |  |
-| `settings` | `json` | ✓ | `N` |  |  |
+| `date_of_birth` | `date` | ✓ |  |  |  |
+| `hire_date` | `date` | ✓ |  |  |  |
+| `position` | `varchar(191)` | ✓ |  |  |  |
+| `department` | `varchar(191)` | ✓ |  |  |  |
+| `salary` | `text` | ✓ |  |  |  |
+| `avatar` | `varchar(191)` | ✓ |  |  |  |
+| `settings` | `json` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` | IX |  |
-| `last_login_at` | `timestamp` | ✓ | `N` |  |  |
-| `remember_token` | `varchar(100)` | ✓ | `N` |  |  |
-| `two_factor_secret` | `text` | ✓ | `N` |  |  |
+| `last_login_at` | `timestamp` | ✓ |  |  |  |
+| `remember_token` | `varchar(100)` | ✓ |  |  |  |
+| `two_factor_secret` | `text` | ✓ |  |  |  |
 | `two_factor_enabled` | `tinyint(1)` |  | `0` |  |  |
-| `two_factor_confirmed_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `two_factor_confirmed_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (6)</summary>
 
@@ -209,12 +209,12 @@ Users, role-based permissions (Spatie model: roles are organization-scoped), 2FA
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `name` | `varchar(125)` |  | `N` | IX |  |
-| `guard_name` | `varchar(125)` |  | `N` |  |  |
-| `organization_id` | `bigint unsigned` | ✓ | `N` | IX | → `organizations.id` (on delete cascade) |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `name` | `varchar(125)` |  |  | IX |  |
+| `guard_name` | `varchar(125)` |  |  |  |  |
+| `organization_id` | `bigint unsigned` | ✓ |  | IX | → `organizations.id` (on delete cascade) |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -227,11 +227,11 @@ Users, role-based permissions (Spatie model: roles are organization-scoped), 2FA
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `name` | `varchar(125)` |  | `N` | IX |  |
-| `guard_name` | `varchar(125)` |  | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `name` | `varchar(125)` |  |  | IX |  |
+| `guard_name` | `varchar(125)` |  |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (1)</summary>
 
@@ -243,9 +243,9 @@ Users, role-based permissions (Spatie model: roles are organization-scoped), 2FA
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `role_id` | `bigint unsigned` |  | `N` | PK |  |
-| `model_type` | `varchar(191)` |  | `N` | PK |  |
-| `model_id` | `bigint unsigned` |  | `N` | PK |  |
+| `role_id` | `bigint unsigned` |  |  | PK |  |
+| `model_type` | `varchar(191)` |  |  | PK |  |
+| `model_id` | `bigint unsigned` |  |  | PK |  |
 
 <details><summary>Indexes (1)</summary>
 
@@ -257,9 +257,9 @@ Users, role-based permissions (Spatie model: roles are organization-scoped), 2FA
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `permission_id` | `bigint unsigned` |  | `N` | PK |  |
-| `model_type` | `varchar(191)` |  | `N` | PK |  |
-| `model_id` | `bigint unsigned` |  | `N` | PK |  |
+| `permission_id` | `bigint unsigned` |  |  | PK |  |
+| `model_type` | `varchar(191)` |  |  | PK |  |
+| `model_id` | `bigint unsigned` |  |  | PK |  |
 
 <details><summary>Indexes (1)</summary>
 
@@ -271,8 +271,8 @@ Users, role-based permissions (Spatie model: roles are organization-scoped), 2FA
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `permission_id` | `bigint unsigned` |  | `N` | PK |  |
-| `role_id` | `bigint unsigned` |  | `N` | PK |  |
+| `permission_id` | `bigint unsigned` |  |  | PK |  |
+| `role_id` | `bigint unsigned` |  |  | PK |  |
 
 <details><summary>Indexes (1)</summary>
 
@@ -284,19 +284,19 @@ Users, role-based permissions (Spatie model: roles are organization-scoped), 2FA
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `user_id` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete cascade) |
-| `token_hash` | `varchar(64)` |  | `N` | UQ |  |
-| `device_name` | `varchar(191)` | ✓ | `N` |  |  |
-| `user_agent` | `varchar(500)` | ✓ | `N` |  |  |
-| `ip_address` | `varchar(45)` | ✓ | `N` |  |  |
-| `last_used_at` | `timestamp` | ✓ | `N` |  |  |
-| `expires_at` | `timestamp` |  | `N` |  |  |
-| `blocked_at` | `timestamp` | ✓ | `N` |  |  |
-| `blocked_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `block_reason` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `user_id` | `bigint unsigned` |  |  | IX | → `users.id` (on delete cascade) |
+| `token_hash` | `varchar(64)` |  |  | UQ |  |
+| `device_name` | `varchar(191)` | ✓ |  |  |  |
+| `user_agent` | `varchar(500)` | ✓ |  |  |  |
+| `ip_address` | `varchar(45)` | ✓ |  |  |  |
+| `last_used_at` | `timestamp` | ✓ |  |  |  |
+| `expires_at` | `timestamp` |  |  |  |  |
+| `blocked_at` | `timestamp` | ✓ |  |  |  |
+| `blocked_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `block_reason` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -310,9 +310,9 @@ Users, role-based permissions (Spatie model: roles are organization-scoped), 2FA
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `user_id` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete cascade) |
-| `sale_id` | `bigint unsigned` |  | `N` | IX | → `sales.id` (on delete cascade) |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `user_id` | `bigint unsigned` |  |  | IX | → `users.id` (on delete cascade) |
+| `sale_id` | `bigint unsigned` |  |  | IX | → `sales.id` (on delete cascade) |
 | `read_at` | `timestamp` |  | `CURRENT_TIMESTAMP` |  |  |
 
 <details><summary>Indexes (3)</summary>
@@ -327,10 +327,10 @@ Users, role-based permissions (Spatie model: roles are organization-scoped), 2FA
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `user_id` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete cascade) |
-| `notification_type` | `varchar(50)` |  | `N` |  |  |
-| `reference_id` | `bigint unsigned` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `user_id` | `bigint unsigned` |  |  | IX | → `users.id` (on delete cascade) |
+| `notification_type` | `varchar(50)` |  |  |  |  |
+| `reference_id` | `bigint unsigned` |  |  |  |  |
 | `read_at` | `timestamp` |  | `CURRENT_TIMESTAMP` |  |  |
 
 <details><summary>Indexes (2)</summary>
@@ -348,31 +348,31 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `category_id` | `bigint unsigned` | ✓ | `N` | IX | → `categories.id` (on delete set null) |
-| `manufacturer_id` | `bigint unsigned` | ✓ | `N` | IX | → `manufacturers.id` (on delete set null) |
-| `sku` | `varchar(191)` |  | `N` | UQ |  |
-| `barcode` | `varchar(191)` | ✓ | `N` | UQ |  |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `description` | `text` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `category_id` | `bigint unsigned` | ✓ |  | IX | → `categories.id` (on delete set null) |
+| `manufacturer_id` | `bigint unsigned` | ✓ |  | IX | → `manufacturers.id` (on delete set null) |
+| `sku` | `varchar(191)` |  |  | UQ |  |
+| `barcode` | `varchar(191)` | ✓ |  | UQ |  |
+| `name` | `varchar(191)` |  |  |  |  |
+| `description` | `text` | ✓ |  |  |  |
 | `type` | `enum('product','service','bundle')` |  | `product` |  |  |
 | `unit_of_measure` | `varchar(191)` |  | `pcs` |  |  |
-| `cost_price` | `decimal(10,2)` | ✓ | `N` |  |  |
-| `selling_price` | `decimal(10,2)` | ✓ | `N` |  |  |
+| `cost_price` | `decimal(10,2)` | ✓ |  |  |  |
+| `selling_price` | `decimal(10,2)` | ✓ |  |  |  |
 | `min_stock_level` | `int` |  | `0` |  |  |
 | `max_stock_level` | `int` |  | `0` |  |  |
 | `reorder_point` | `int` |  | `0` |  |  |
-| `weight` | `decimal(8,2)` | ✓ | `N` |  |  |
-| `dimensions` | `json` | ✓ | `N` |  |  |
-| `image` | `varchar(191)` | ✓ | `N` |  |  |
+| `weight` | `decimal(8,2)` | ✓ |  |  |  |
+| `dimensions` | `json` | ✓ |  |  |  |
+| `image` | `varchar(191)` | ✓ |  |  |  |
 | `tax_rate` | `decimal(5,2)` |  | `0.00` |  |  |
 | `is_taxable` | `tinyint(1)` |  | `1` |  |  |
 | `is_active` | `tinyint(1)` |  | `1` | IX |  |
-| `settings` | `json` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `settings` | `json` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (6)</summary>
 
@@ -389,18 +389,18 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `parent_id` | `bigint unsigned` | ✓ | `N` | IX | → `categories.id` (on delete set null) |
-| `code` | `varchar(191)` |  | `N` | UQ |  |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `description` | `text` | ✓ | `N` |  |  |
-| `image` | `varchar(191)` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `parent_id` | `bigint unsigned` | ✓ |  | IX | → `categories.id` (on delete set null) |
+| `code` | `varchar(191)` |  |  | UQ |  |
+| `name` | `varchar(191)` |  |  |  |  |
+| `description` | `text` | ✓ |  |  |  |
+| `image` | `varchar(191)` | ✓ |  |  |  |
 | `sort_order` | `int` |  | `0` |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -414,16 +414,16 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `code` | `varchar(191)` |  | `N` | UQ |  |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `country` | `varchar(191)` | ✓ | `N` |  |  |
-| `website` | `varchar(191)` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `code` | `varchar(191)` |  |  | UQ |  |
+| `name` | `varchar(191)` |  |  |  |  |
+| `country` | `varchar(191)` | ✓ |  |  |  |
+| `website` | `varchar(191)` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -436,16 +436,16 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `item_id` | `bigint unsigned` |  | `N` | IX | → `items.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` |  | `N` | IX | → `branches.id` (on delete cascade) |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `item_id` | `bigint unsigned` |  |  | IX | → `items.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` |  |  | IX | → `branches.id` (on delete cascade) |
 | `quantity` | `int` |  | `0` |  |  |
 | `store_quantity` | `int` |  | `0` |  |  |
 | `reserved_quantity` | `int` |  | `0` |  |  |
 | `available_quantity` | `int` |  | `0` |  |  |
-| `last_updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `last_updated_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -458,15 +458,15 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `store_id` | `bigint unsigned` |  | `N` | IX | → `stores.id` (on delete cascade) |
-| `item_id` | `bigint unsigned` |  | `N` | IX | → `items.id` (on delete restrict) |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `store_id` | `bigint unsigned` |  |  | IX | → `stores.id` (on delete cascade) |
+| `item_id` | `bigint unsigned` |  |  | IX | → `items.id` (on delete restrict) |
 | `quantity` | `int` |  | `0` |  |  |
 | `reserved_quantity` | `int` |  | `0` |  |  |
 | `available_quantity` | `int` |  | `0` |  |  |
-| `last_updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `last_updated_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -480,28 +480,28 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `idempotency_key` | `varchar(64)` | ✓ | `N` |  |  |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete cascade) |
-| `store_id` | `bigint unsigned` | ✓ | `N` | IX | → `stores.id` (on delete set null) |
-| `item_id` | `bigint unsigned` |  | `N` | IX | → `items.id` (on delete restrict) |
-| `adjusted_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `adjustment_number` | `varchar(191)` |  | `N` | IX |  |
-| `adjustment_date` | `date` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `idempotency_key` | `varchar(64)` | ✓ |  |  |  |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete cascade) |
+| `store_id` | `bigint unsigned` | ✓ |  | IX | → `stores.id` (on delete set null) |
+| `item_id` | `bigint unsigned` |  |  | IX | → `items.id` (on delete restrict) |
+| `adjusted_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `adjustment_number` | `varchar(191)` |  |  | IX |  |
+| `adjustment_date` | `date` |  |  |  |  |
 | `adjustment_type` | `enum('increase','decrease','set')` |  | `increase` |  |  |
-| `quantity_before` | `int` |  | `N` |  |  |
-| `adjustment_quantity` | `int` |  | `N` |  |  |
-| `cost_price` | `decimal(10,2)` | ✓ | `N` |  |  |
-| `selling_price` | `decimal(10,2)` | ✓ | `N` |  |  |
-| `quantity_after` | `int` |  | `N` |  |  |
+| `quantity_before` | `int` |  |  |  |  |
+| `adjustment_quantity` | `int` |  |  |  |  |
+| `cost_price` | `decimal(10,2)` | ✓ |  |  |  |
+| `selling_price` | `decimal(10,2)` | ✓ |  |  |  |
+| `quantity_after` | `int` |  |  |  |  |
 | `reason` | `enum('damaged','expired','returned','found','theft','correction','transfer_in','transfer_out','cycle_count','vendor_return','add_stock','price_update','sale_cancelled','other')` | ✓ | `correction` |  |  |
-| `reason_notes` | `text` | ✓ | `N` |  |  |
-| `reference_number` | `varchar(191)` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `reason_notes` | `text` | ✓ |  |  |  |
+| `reference_number` | `varchar(191)` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (8)</summary>
 
@@ -520,20 +520,20 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` |  | `N` | IX | → `branches.id` (on delete cascade) |
-| `store_id` | `bigint unsigned` | ✓ | `N` | IX | → `stores.id` (on delete set null) |
-| `requested_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `reviewed_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `request_number` | `varchar(191)` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` |  |  | IX | → `branches.id` (on delete cascade) |
+| `store_id` | `bigint unsigned` | ✓ |  | IX | → `stores.id` (on delete set null) |
+| `requested_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `reviewed_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `request_number` | `varchar(191)` |  |  |  |  |
 | `status` | `enum('pending','reviewed','converted','rejected')` |  | `pending` |  |  |
-| `reason` | `text` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `reviewed_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `reason` | `text` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `reviewed_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (6)</summary>
 
@@ -550,13 +550,13 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `stock_request_id` | `bigint unsigned` |  | `N` | IX | → `stock_requests.id` (on delete cascade) |
-| `item_id` | `bigint unsigned` |  | `N` | IX | → `items.id` (on delete restrict) |
-| `requested_quantity` | `int` |  | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `stock_request_id` | `bigint unsigned` |  |  | IX | → `stock_requests.id` (on delete cascade) |
+| `item_id` | `bigint unsigned` |  |  | IX | → `items.id` (on delete restrict) |
+| `requested_quantity` | `int` |  |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -569,22 +569,22 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete cascade) |
-| `store_id` | `bigint unsigned` | ✓ | `N` | IX | → `stores.id` (on delete set null) |
-| `purchase_order_id` | `bigint unsigned` |  | `N` | IX | → `purchase_orders.id` (on delete cascade) |
-| `received_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `approved_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `receipt_number` | `varchar(191)` |  | `N` |  |  |
-| `received_date` | `date` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete cascade) |
+| `store_id` | `bigint unsigned` | ✓ |  | IX | → `stores.id` (on delete set null) |
+| `purchase_order_id` | `bigint unsigned` |  |  | IX | → `purchase_orders.id` (on delete cascade) |
+| `received_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `approved_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `receipt_number` | `varchar(191)` |  |  |  |  |
+| `received_date` | `date` |  |  |  |  |
 | `status` | `enum('submitted','approved','rejected')` |  | `submitted` |  |  |
-| `reason` | `text` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `approved_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `reason` | `text` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `approved_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (7)</summary>
 
@@ -602,15 +602,15 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `goods_receipt_id` | `bigint unsigned` |  | `N` | IX | → `goods_receipts.id` (on delete cascade) |
-| `purchase_order_item_id` | `bigint unsigned` |  | `N` | IX | → `purchase_order_items.id` (on delete cascade) |
-| `item_id` | `bigint unsigned` |  | `N` | IX | → `items.id` (on delete restrict) |
-| `received_quantity` | `int` |  | `N` |  |  |
-| `unit_cost` | `decimal(10,2)` | ✓ | `N` |  |  |
-| `selling_price` | `decimal(10,2)` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `goods_receipt_id` | `bigint unsigned` |  |  | IX | → `goods_receipts.id` (on delete cascade) |
+| `purchase_order_item_id` | `bigint unsigned` |  |  | IX | → `purchase_order_items.id` (on delete cascade) |
+| `item_id` | `bigint unsigned` |  |  | IX | → `items.id` (on delete restrict) |
+| `received_quantity` | `int` |  |  |  |  |
+| `unit_cost` | `decimal(10,2)` | ✓ |  |  |  |
+| `selling_price` | `decimal(10,2)` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -624,19 +624,19 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` |  | `N` | IX | → `branches.id` (on delete cascade) |
-| `sent_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `accepted_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `transfer_number` | `varchar(191)` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` |  |  | IX | → `branches.id` (on delete cascade) |
+| `sent_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `accepted_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `transfer_number` | `varchar(191)` |  |  |  |  |
 | `status` | `enum('pending','accepted','rejected')` |  | `pending` |  |  |
-| `reason` | `text` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `accepted_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `reason` | `text` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `accepted_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (5)</summary>
 
@@ -652,14 +652,14 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `stock_unit_transfer_id` | `bigint unsigned` |  | `N` | IX | → `stock_unit_transfers.id` (on delete cascade) |
-| `item_id` | `bigint unsigned` |  | `N` | IX | → `items.id` (on delete restrict) |
-| `quantity` | `int` |  | `N` |  |  |
-| `unit_cost` | `decimal(10,2)` | ✓ | `N` |  |  |
-| `selling_price` | `decimal(10,2)` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `stock_unit_transfer_id` | `bigint unsigned` |  |  | IX | → `stock_unit_transfers.id` (on delete cascade) |
+| `item_id` | `bigint unsigned` |  |  | IX | → `items.id` (on delete restrict) |
+| `quantity` | `int` |  |  |  |  |
+| `unit_cost` | `decimal(10,2)` | ✓ |  |  |  |
+| `selling_price` | `decimal(10,2)` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -672,21 +672,21 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `from_branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete restrict) |
-| `from_store_id` | `bigint unsigned` | ✓ | `N` | IX | → `stores.id` (on delete set null) |
-| `to_branch_id` | `bigint unsigned` |  | `N` | IX | → `branches.id` (on delete restrict) |
-| `sent_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `received_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `transfer_number` | `varchar(191)` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `from_branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete restrict) |
+| `from_store_id` | `bigint unsigned` | ✓ |  | IX | → `stores.id` (on delete set null) |
+| `to_branch_id` | `bigint unsigned` |  |  | IX | → `branches.id` (on delete restrict) |
+| `sent_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `received_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `transfer_number` | `varchar(191)` |  |  |  |  |
 | `status` | `enum('pending','received','rejected')` |  | `pending` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `reason` | `text` | ✓ | `N` |  |  |
-| `received_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `reason` | `text` | ✓ |  |  |  |
+| `received_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (8)</summary>
 
@@ -705,14 +705,14 @@ Items and their per-branch / per-store stock, with every movement (adjustment, r
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `branch_transfer_id` | `bigint unsigned` |  | `N` | IX | → `branch_transfers.id` (on delete cascade) |
-| `item_id` | `bigint unsigned` |  | `N` | IX | → `items.id` (on delete restrict) |
-| `quantity` | `int` |  | `N` |  |  |
-| `unit_cost` | `decimal(10,2)` | ✓ | `N` |  |  |
-| `selling_price` | `decimal(10,2)` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `branch_transfer_id` | `bigint unsigned` |  |  | IX | → `branch_transfers.id` (on delete cascade) |
+| `item_id` | `bigint unsigned` |  |  | IX | → `items.id` (on delete restrict) |
+| `quantity` | `int` |  |  |  |  |
+| `unit_cost` | `decimal(10,2)` | ✓ |  |  |  |
+| `selling_price` | `decimal(10,2)` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -729,30 +729,30 @@ Suppliers and purchase orders with an approval workflow and payment tracking.
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `tin` | `varchar(191)` | ✓ | `N` |  |  |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `legal_name` | `varchar(191)` | ✓ | `N` |  |  |
-| `tax_id` | `varchar(191)` | ✓ | `N` |  |  |
-| `email` | `varchar(191)` | ✓ | `N` |  |  |
-| `phone` | `varchar(191)` | ✓ | `N` |  |  |
-| `contact_person` | `varchar(191)` | ✓ | `N` |  |  |
-| `address` | `text` | ✓ | `N` |  |  |
-| `city` | `varchar(191)` | ✓ | `N` |  |  |
-| `state` | `varchar(191)` | ✓ | `N` |  |  |
-| `postal_code` | `varchar(191)` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `tin` | `varchar(191)` | ✓ |  |  |  |
+| `name` | `varchar(191)` |  |  |  |  |
+| `legal_name` | `varchar(191)` | ✓ |  |  |  |
+| `tax_id` | `varchar(191)` | ✓ |  |  |  |
+| `email` | `varchar(191)` | ✓ |  |  |  |
+| `phone` | `varchar(191)` | ✓ |  |  |  |
+| `contact_person` | `varchar(191)` | ✓ |  |  |  |
+| `address` | `text` | ✓ |  |  |  |
+| `city` | `varchar(191)` | ✓ |  |  |  |
+| `state` | `varchar(191)` | ✓ |  |  |  |
+| `postal_code` | `varchar(191)` | ✓ |  |  |  |
 | `country` | `varchar(191)` |  | `US` |  |  |
-| `website` | `varchar(191)` | ✓ | `N` |  |  |
+| `website` | `varchar(191)` | ✓ |  |  |  |
 | `payment_terms` | `enum('net_15','net_30','net_45','net_60','cod','prepaid')` |  | `net_30` |  |  |
 | `credit_limit` | `int` |  | `0` |  |  |
-| `rating` | `decimal(3,2)` | ✓ | `N` |  | Supplier rating 0-5 |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `settings` | `json` | ✓ | `N` |  |  |
+| `rating` | `decimal(3,2)` | ✓ |  |  | Supplier rating 0-5 |
+| `notes` | `text` | ✓ |  |  |  |
+| `settings` | `json` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -765,20 +765,20 @@ Suppliers and purchase orders with an approval workflow and payment tracking.
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete cascade) |
-| `store_id` | `bigint unsigned` | ✓ | `N` | IX | → `stores.id` (on delete set null) |
-| `supplier_id` | `bigint unsigned` |  | `N` | IX | → `suppliers.id` (on delete restrict) |
-| `stock_request_id` | `bigint unsigned` | ✓ | `N` | IX | → `stock_requests.id` (on delete set null) |
-| `created_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `po_number` | `varchar(191)` |  | `N` |  |  |
-| `order_date` | `date` |  | `N` |  |  |
-| `expected_delivery_date` | `date` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete cascade) |
+| `store_id` | `bigint unsigned` | ✓ |  | IX | → `stores.id` (on delete set null) |
+| `supplier_id` | `bigint unsigned` |  |  | IX | → `suppliers.id` (on delete restrict) |
+| `stock_request_id` | `bigint unsigned` | ✓ |  | IX | → `stock_requests.id` (on delete set null) |
+| `created_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `po_number` | `varchar(191)` |  |  |  |  |
+| `order_date` | `date` |  |  |  |  |
+| `expected_delivery_date` | `date` | ✓ |  |  |  |
 | `status` | `enum('draft','pending','approved','ordered','partial','received','cancelled')` |  | `draft` |  |  |
-| `reason` | `text` | ✓ | `N` |  |  |
-| `approved_at` | `timestamp` | ✓ | `N` |  |  |
-| `approved_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
+| `reason` | `text` | ✓ |  |  |  |
+| `approved_at` | `timestamp` | ✓ |  |  |  |
+| `approved_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
 | `payment_terms` | `enum('net_15','net_30','net_45','net_60','cod','prepaid')` |  | `net_30` |  |  |
 | `subtotal` | `decimal(12,2)` |  | `0.00` |  |  |
 | `tax_amount` | `decimal(12,2)` |  | `0.00` |  |  |
@@ -787,11 +787,11 @@ Suppliers and purchase orders with an approval workflow and payment tracking.
 | `total_amount` | `decimal(12,2)` |  | `0.00` |  |  |
 | `paid_amount` | `decimal(12,2)` |  | `0.00` |  |  |
 | `payment_status` | `enum('unpaid','partial','paid')` |  | `unpaid` |  |  |
-| `payment_due_date` | `date` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `payment_due_date` | `date` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (9)</summary>
 
@@ -811,20 +811,20 @@ Suppliers and purchase orders with an approval workflow and payment tracking.
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `purchase_order_id` | `bigint unsigned` |  | `N` | IX | → `purchase_orders.id` (on delete cascade) |
-| `item_id` | `bigint unsigned` |  | `N` | IX | → `items.id` (on delete restrict) |
-| `quantity` | `int` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `purchase_order_id` | `bigint unsigned` |  |  | IX | → `purchase_orders.id` (on delete cascade) |
+| `item_id` | `bigint unsigned` |  |  | IX | → `items.id` (on delete restrict) |
+| `quantity` | `int` |  |  |  |  |
 | `received_quantity` | `int` |  | `0` |  |  |
-| `unit_cost` | `decimal(10,2)` |  | `N` |  |  |
-| `selling_price` | `decimal(10,2)` | ✓ | `N` |  |  |
-| `margin_percentage` | `decimal(10,2)` | ✓ | `N` |  |  |
+| `unit_cost` | `decimal(10,2)` |  |  |  |  |
+| `selling_price` | `decimal(10,2)` | ✓ |  |  |  |
+| `margin_percentage` | `decimal(10,2)` | ✓ |  |  |  |
 | `discount_percentage` | `decimal(5,2)` |  | `0.00` |  |  |
 | `tax_rate` | `decimal(5,2)` |  | `0.00` |  |  |
-| `line_total` | `decimal(12,2)` |  | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `line_total` | `decimal(12,2)` |  |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -841,16 +841,16 @@ Point-of-sale transactions and credit (on-account) sales with instalment collect
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` |  | `N` | IX | → `branches.id` (on delete cascade) |
-| `user_id` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `customer_id` | `bigint unsigned` | ✓ | `N` | IX | → `customers.id` (on delete set null) |
-| `sale_number` | `varchar(191)` |  | `N` |  |  |
-| `idempotency_key` | `varchar(64)` | ✓ | `N` |  |  |
-| `sale_date` | `datetime` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` |  |  | IX | → `branches.id` (on delete cascade) |
+| `user_id` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `customer_id` | `bigint unsigned` | ✓ |  | IX | → `customers.id` (on delete set null) |
+| `sale_number` | `varchar(191)` |  |  |  |  |
+| `idempotency_key` | `varchar(64)` | ✓ |  |  |  |
+| `sale_date` | `datetime` |  |  |  |  |
 | `status` | `enum('draft','pending','completed','cancelled','refunded')` | ✓ | `pending` | IX |  |
-| `reason` | `text` | ✓ | `N` |  |  |
+| `reason` | `text` | ✓ |  |  |  |
 | `payment_status` | `enum('pending','partial','paid','refunded')` |  | `pending` |  |  |
 | `subtotal` | `decimal(12,2)` |  | `0.00` |  |  |
 | `tax_amount` | `decimal(12,2)` |  | `0.00` |  |  |
@@ -858,10 +858,10 @@ Point-of-sale transactions and credit (on-account) sales with instalment collect
 | `total_amount` | `decimal(12,2)` |  | `0.00` |  |  |
 | `amount_paid` | `decimal(12,2)` |  | `0.00` |  |  |
 | `change_amount` | `decimal(12,2)` |  | `0.00` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (8)</summary>
 
@@ -880,17 +880,17 @@ Point-of-sale transactions and credit (on-account) sales with instalment collect
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `sale_id` | `bigint unsigned` |  | `N` | IX | → `sales.id` (on delete cascade) |
-| `item_id` | `bigint unsigned` |  | `N` | IX | → `items.id` (on delete restrict) |
-| `quantity` | `int` |  | `N` |  |  |
-| `unit_price` | `decimal(10,2)` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `sale_id` | `bigint unsigned` |  |  | IX | → `sales.id` (on delete cascade) |
+| `item_id` | `bigint unsigned` |  |  | IX | → `items.id` (on delete restrict) |
+| `quantity` | `int` |  |  |  |  |
+| `unit_price` | `decimal(10,2)` |  |  |  |  |
 | `additional_price` | `decimal(10,2)` |  | `0.00` |  |  |
 | `discount_percentage` | `decimal(5,2)` |  | `0.00` |  |  |
 | `tax_rate` | `decimal(5,2)` |  | `0.00` |  |  |
-| `line_total` | `decimal(12,2)` |  | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `line_total` | `decimal(12,2)` |  |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -903,27 +903,27 @@ Point-of-sale transactions and credit (on-account) sales with instalment collect
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `code` | `varchar(191)` |  | `N` | UQ |  |
-| `first_name` | `varchar(191)` |  | `N` |  |  |
-| `last_name` | `varchar(191)` |  | `N` |  |  |
-| `email` | `varchar(191)` | ✓ | `N` |  |  |
-| `phone` | `text` | ✓ | `N` |  |  |
-| `address` | `text` | ✓ | `N` |  |  |
-| `city` | `varchar(191)` | ✓ | `N` |  |  |
-| `state` | `varchar(191)` | ✓ | `N` |  |  |
-| `postal_code` | `varchar(191)` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `code` | `varchar(191)` |  |  | UQ |  |
+| `first_name` | `varchar(191)` |  |  |  |  |
+| `last_name` | `varchar(191)` |  |  |  |  |
+| `email` | `varchar(191)` | ✓ |  |  |  |
+| `phone` | `text` | ✓ |  |  |  |
+| `address` | `text` | ✓ |  |  |  |
+| `city` | `varchar(191)` | ✓ |  |  |  |
+| `state` | `varchar(191)` | ✓ |  |  |  |
+| `postal_code` | `varchar(191)` | ✓ |  |  |  |
 | `country` | `varchar(191)` |  | `ET` |  |  |
-| `date_of_birth` | `date` | ✓ | `N` |  |  |
-| `gender` | `enum('male','female','other')` | ✓ | `N` |  |  |
+| `date_of_birth` | `date` | ✓ |  |  |  |
+| `gender` | `enum('male','female','other')` | ✓ |  |  |  |
 | `credit_limit` | `decimal(10,2)` |  | `0.00` |  |  |
 | `balance` | `decimal(10,2)` |  | `0.00` |  |  |
-| `settings` | `json` | ✓ | `N` |  |  |
+| `settings` | `json` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -937,28 +937,28 @@ Point-of-sale transactions and credit (on-account) sales with instalment collect
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` |  | `N` | IX | → `branches.id` (on delete cascade) |
-| `customer_id` | `bigint unsigned` |  | `N` | IX | → `customers.id` (on delete restrict) |
-| `created_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `approved_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `credit_sale_number` | `varchar(191)` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` |  |  | IX | → `branches.id` (on delete cascade) |
+| `customer_id` | `bigint unsigned` |  |  | IX | → `customers.id` (on delete restrict) |
+| `created_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `approved_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `credit_sale_number` | `varchar(191)` |  |  |  |  |
 | `status` | `enum('pending','confirmed','partial','paid','overdue','cancelled')` |  | `pending` |  |  |
-| `reason` | `text` | ✓ | `N` |  |  |
+| `reason` | `text` | ✓ |  |  |  |
 | `subtotal` | `decimal(12,2)` |  | `0.00` |  |  |
 | `tax_amount` | `decimal(12,2)` |  | `0.00` |  |  |
 | `discount_amount` | `decimal(12,2)` |  | `0.00` |  |  |
 | `total_amount` | `decimal(12,2)` |  | `0.00` |  |  |
 | `paid_amount` | `decimal(12,2)` |  | `0.00` |  |  |
 | `tax_rate` | `decimal(5,2)` |  | `0.00` |  |  |
-| `issued_date` | `date` |  | `N` |  |  |
-| `due_date` | `date` | ✓ | `N` | IX |  |
-| `confirmed_at` | `timestamp` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `issued_date` | `date` |  |  |  |  |
+| `due_date` | `date` | ✓ |  | IX |  |
+| `confirmed_at` | `timestamp` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (8)</summary>
 
@@ -977,18 +977,18 @@ Point-of-sale transactions and credit (on-account) sales with instalment collect
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `credit_sale_id` | `bigint unsigned` |  | `N` | IX | → `credit_sales.id` (on delete cascade) |
-| `item_id` | `bigint unsigned` | ✓ | `N` | IX | → `items.id` (on delete set null) |
-| `item_name` | `varchar(191)` |  | `N` |  |  |
-| `item_sku` | `varchar(191)` | ✓ | `N` |  |  |
-| `quantity` | `decimal(10,2)` |  | `N` |  |  |
-| `unit_price` | `decimal(12,2)` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `credit_sale_id` | `bigint unsigned` |  |  | IX | → `credit_sales.id` (on delete cascade) |
+| `item_id` | `bigint unsigned` | ✓ |  | IX | → `items.id` (on delete set null) |
+| `item_name` | `varchar(191)` |  |  |  |  |
+| `item_sku` | `varchar(191)` | ✓ |  |  |  |
+| `quantity` | `decimal(10,2)` |  |  |  |  |
+| `unit_price` | `decimal(12,2)` |  |  |  |  |
 | `discount_percentage` | `decimal(5,2)` |  | `0.00` |  |  |
 | `tax_rate` | `decimal(5,2)` |  | `0.00` |  |  |
-| `line_total` | `decimal(12,2)` |  | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `line_total` | `decimal(12,2)` |  |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -1001,19 +1001,19 @@ Point-of-sale transactions and credit (on-account) sales with instalment collect
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `idempotency_key` | `varchar(64)` | ✓ | `N` |  |  |
-| `credit_sale_id` | `bigint unsigned` |  | `N` | IX | → `credit_sales.id` (on delete cascade) |
-| `created_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `amount` | `decimal(12,2)` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `idempotency_key` | `varchar(64)` | ✓ |  |  |  |
+| `credit_sale_id` | `bigint unsigned` |  |  | IX | → `credit_sales.id` (on delete cascade) |
+| `created_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `amount` | `decimal(12,2)` |  |  |  |  |
 | `payment_method` | `enum('cash','telebirr','bank_transfer','cheque')` |  | `cash` |  |  |
-| `bank_id` | `bigint unsigned` | ✓ | `N` | IX | → `banks.id` (on delete set null) |
-| `bank_name` | `varchar(255)` | ✓ | `N` |  |  |
-| `payment_date` | `date` |  | `N` |  |  |
-| `reference` | `varchar(191)` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `bank_id` | `bigint unsigned` | ✓ |  | IX | → `banks.id` (on delete set null) |
+| `bank_name` | `varchar(255)` | ✓ |  |  |  |
+| `payment_date` | `date` |  |  |  |  |
+| `reference` | `varchar(191)` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (4)</summary>
 
@@ -1032,22 +1032,22 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
 | `account_type` | `enum('bank','cash','wallet')` |  | `bank` |  |  |
-| `branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete set null) |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `code` | `varchar(191)` | ✓ | `N` |  |  |
-| `account_number` | `text` | ✓ | `N` |  |  |
-| `account_name` | `varchar(191)` | ✓ | `N` |  |  |
-| `branch_name` | `varchar(191)` | ✓ | `N` |  |  |
-| `swift_code` | `text` | ✓ | `N` |  |  |
+| `branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete set null) |
+| `name` | `varchar(191)` |  |  |  |  |
+| `code` | `varchar(191)` | ✓ |  |  |  |
+| `account_number` | `text` | ✓ |  |  |  |
+| `account_name` | `varchar(191)` | ✓ |  |  |  |
+| `branch_name` | `varchar(191)` | ✓ |  |  |  |
+| `swift_code` | `text` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
 | `opening_balance` | `decimal(14,2)` |  | `0.00` |  |  |
 | `current_balance` | `decimal(14,2)` |  | `0.00` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -1061,23 +1061,23 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `idempotency_key` | `varchar(64)` | ✓ | `N` |  |  |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `bank_id` | `bigint unsigned` |  | `N` | IX | → `banks.id` (on delete cascade) |
-| `transaction_type` | `enum('credit','debit')` |  | `N` |  |  |
-| `source_type` | `varchar(191)` |  | `N` |  |  |
-| `source_id` | `bigint unsigned` | ✓ | `N` |  |  |
-| `payment_id` | `bigint unsigned` | ✓ | `N` | IX | → `payments.id` (on delete set null) |
-| `amount` | `decimal(12,2)` |  | `N` |  |  |
-| `balance_before` | `decimal(14,2)` |  | `N` |  |  |
-| `balance_after` | `decimal(14,2)` |  | `N` |  |  |
-| `description` | `varchar(191)` | ✓ | `N` |  |  |
-| `reference_number` | `varchar(100)` | ✓ | `N` |  |  |
-| `recorded_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `transaction_date` | `date` |  | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `idempotency_key` | `varchar(64)` | ✓ |  |  |  |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `bank_id` | `bigint unsigned` |  |  | IX | → `banks.id` (on delete cascade) |
+| `transaction_type` | `enum('credit','debit')` |  |  |  |  |
+| `source_type` | `varchar(191)` |  |  |  |  |
+| `source_id` | `bigint unsigned` | ✓ |  |  |  |
+| `payment_id` | `bigint unsigned` | ✓ |  | IX | → `payments.id` (on delete set null) |
+| `amount` | `decimal(12,2)` |  |  |  |  |
+| `balance_before` | `decimal(14,2)` |  |  |  |  |
+| `balance_after` | `decimal(14,2)` |  |  |  |  |
+| `description` | `varchar(191)` | ✓ |  |  |  |
+| `reference_number` | `varchar(100)` | ✓ |  |  |  |
+| `recorded_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `transaction_date` | `date` |  |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (6)</summary>
 
@@ -1094,19 +1094,19 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `code` | `varchar(191)` |  | `N` |  |  |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `type` | `varchar(191)` |  | `N` |  | cash, card, bank_transfer, digital_wallet, etc. |
-| `default_bank_id` | `bigint unsigned` | ✓ | `N` | IX | → `banks.id` (on delete set null) |
-| `description` | `text` | ✓ | `N` |  |  |
-| `settings` | `json` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `code` | `varchar(191)` |  |  |  |  |
+| `name` | `varchar(191)` |  |  |  |  |
+| `type` | `varchar(191)` |  |  |  | cash, card, bank_transfer, digital_wallet, etc. |
+| `default_bank_id` | `bigint unsigned` | ✓ |  | IX | → `banks.id` (on delete set null) |
+| `description` | `text` | ✓ |  |  |  |
+| `settings` | `json` | ✓ |  |  |  |
 | `requires_authorization` | `tinyint(1)` |  | `0` |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -1120,23 +1120,23 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `idempotency_key` | `varchar(64)` | ✓ | `N` |  |  |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` |  | `N` | IX | → `branches.id` (on delete cascade) |
-| `payable_type` | `varchar(191)` |  | `N` | IX |  |
-| `payable_id` | `bigint unsigned` |  | `N` |  |  |
-| `payment_method_id` | `bigint unsigned` |  | `N` | IX | → `payment_methods.id` (on delete restrict) |
-| `bank_id` | `bigint unsigned` | ✓ | `N` | IX | → `banks.id` (on delete set null) |
-| `user_id` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `reference_number` | `varchar(191)` | ✓ | `N` |  |  |
-| `amount` | `decimal(12,2)` |  | `N` |  |  |
-| `payment_date` | `date` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `idempotency_key` | `varchar(64)` | ✓ |  |  |  |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` |  |  | IX | → `branches.id` (on delete cascade) |
+| `payable_type` | `varchar(191)` |  |  | IX |  |
+| `payable_id` | `bigint unsigned` |  |  |  |  |
+| `payment_method_id` | `bigint unsigned` |  |  | IX | → `payment_methods.id` (on delete restrict) |
+| `bank_id` | `bigint unsigned` | ✓ |  | IX | → `banks.id` (on delete set null) |
+| `user_id` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `reference_number` | `varchar(191)` | ✓ |  |  |  |
+| `amount` | `decimal(12,2)` |  |  |  |  |
+| `payment_date` | `date` |  |  |  |  |
 | `status` | `enum('pending','completed','failed','refunded')` |  | `pending` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `metadata` | `json` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `metadata` | `json` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (8)</summary>
 
@@ -1155,22 +1155,22 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `idempotency_key` | `varchar(64)` | ✓ | `N` |  |  |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `from_bank_id` | `bigint unsigned` |  | `N` | IX | → `banks.id` (on delete restrict) |
-| `to_bank_id` | `bigint unsigned` |  | `N` | IX | → `banks.id` (on delete restrict) |
-| `amount` | `decimal(14,2)` |  | `N` |  |  |
-| `reference_number` | `varchar(100)` |  | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `transferred_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `idempotency_key` | `varchar(64)` | ✓ |  |  |  |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `from_bank_id` | `bigint unsigned` |  |  | IX | → `banks.id` (on delete restrict) |
+| `to_bank_id` | `bigint unsigned` |  |  | IX | → `banks.id` (on delete restrict) |
+| `amount` | `decimal(14,2)` |  |  |  |  |
+| `reference_number` | `varchar(100)` |  |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `transferred_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
 | `status` | `enum('pending','approved','rejected')` |  | `pending` |  |  |
-| `approved_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `approved_at` | `timestamp` | ✓ | `N` |  |  |
-| `rejection_reason` | `text` | ✓ | `N` |  |  |
-| `transaction_date` | `date` |  | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `approved_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `approved_at` | `timestamp` | ✓ |  |  |  |
+| `rejection_reason` | `text` | ✓ |  |  |  |
+| `transaction_date` | `date` |  |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (7)</summary>
 
@@ -1188,29 +1188,29 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` |  | `N` | IX | → `branches.id` (on delete cascade) |
-| `expense_category_id` | `bigint unsigned` |  | `N` | IX | → `expense_categories.id` (on delete restrict) |
-| `created_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `approved_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `expense_number` | `varchar(191)` |  | `N` |  |  |
-| `title` | `varchar(191)` |  | `N` |  |  |
-| `description` | `text` | ✓ | `N` |  |  |
-| `amount` | `decimal(12,2)` |  | `N` |  |  |
-| `expense_date` | `date` |  | `N` | IX |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` |  |  | IX | → `branches.id` (on delete cascade) |
+| `expense_category_id` | `bigint unsigned` |  |  | IX | → `expense_categories.id` (on delete restrict) |
+| `created_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `approved_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `expense_number` | `varchar(191)` |  |  |  |  |
+| `title` | `varchar(191)` |  |  |  |  |
+| `description` | `text` | ✓ |  |  |  |
+| `amount` | `decimal(12,2)` |  |  |  |  |
+| `expense_date` | `date` |  |  | IX |  |
 | `status` | `enum('pending','approved','rejected')` |  | `pending` |  |  |
-| `reason` | `text` | ✓ | `N` |  |  |
+| `reason` | `text` | ✓ |  |  |  |
 | `payment_method` | `enum('cash','telebirr','bank_transfer','cheque')` |  | `cash` |  |  |
-| `bank_id` | `bigint unsigned` | ✓ | `N` | IX | → `banks.id` (on delete set null) |
-| `bank_name` | `varchar(191)` | ✓ | `N` |  |  |
-| `reference` | `varchar(191)` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
+| `bank_id` | `bigint unsigned` | ✓ |  | IX | → `banks.id` (on delete set null) |
+| `bank_name` | `varchar(191)` | ✓ |  |  |  |
+| `reference` | `varchar(191)` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `approved_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `approved_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (9)</summary>
 
@@ -1230,14 +1230,14 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `description` | `varchar(191)` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `name` | `varchar(191)` |  |  |  |  |
+| `description` | `varchar(191)` | ✓ |  |  |  |
 | `color` | `varchar(191)` |  | `#6366f1` |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (1)</summary>
 
@@ -1249,26 +1249,26 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete cascade) |
-| `expense_category_id` | `bigint unsigned` |  | `N` | IX | → `expense_categories.id` (on delete restrict) |
-| `title` | `varchar(191)` |  | `N` |  |  |
-| `description` | `text` | ✓ | `N` |  |  |
-| `amount` | `decimal(14,2)` |  | `N` |  |  |
-| `frequency` | `enum('one_time','weekly','monthly','quarterly','yearly')` |  | `N` |  |  |
-| `due_date` | `date` |  | `N` | IX |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete cascade) |
+| `expense_category_id` | `bigint unsigned` |  |  | IX | → `expense_categories.id` (on delete restrict) |
+| `title` | `varchar(191)` |  |  |  |  |
+| `description` | `text` | ✓ |  |  |  |
+| `amount` | `decimal(14,2)` |  |  |  |  |
+| `frequency` | `enum('one_time','weekly','monthly','quarterly','yearly')` |  |  |  |  |
+| `due_date` | `date` |  |  | IX |  |
 | `alert_days_before` | `int unsigned` |  | `3` |  |  |
 | `payment_method` | `enum('cash','telebirr','bank_transfer','cheque')` |  | `cash` |  |  |
-| `bank_id` | `bigint unsigned` | ✓ | `N` | IX | → `banks.id` (on delete set null) |
+| `bank_id` | `bigint unsigned` | ✓ |  | IX | → `banks.id` (on delete set null) |
 | `auto_generate_expense` | `tinyint(1)` |  | `1` |  |  |
 | `status` | `enum('active','paused','cancelled')` |  | `active` |  |  |
-| `last_generated_expense_id` | `bigint unsigned` | ✓ | `N` | IX | → `expenses.id` (on delete set null) |
-| `created_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `last_generated_expense_id` | `bigint unsigned` | ✓ |  | IX | → `expenses.id` (on delete set null) |
+| `created_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (7)</summary>
 
@@ -1286,34 +1286,34 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete cascade) |
-| `direction` | `enum('payable','receivable')` |  | `N` |  |  |
-| `counterparty_type` | `enum('bank','person','company')` |  | `N` |  |  |
-| `counterparty_name` | `varchar(191)` |  | `N` |  |  |
-| `counterparty_contact` | `varchar(191)` | ✓ | `N` |  |  |
-| `counterparty_address` | `varchar(191)` | ✓ | `N` |  |  |
-| `loan_number` | `varchar(191)` |  | `N` |  |  |
-| `principal_amount` | `decimal(14,2)` |  | `N` |  |  |
-| `interest_rate` | `decimal(5,2)` | ✓ | `N` |  |  |
-| `start_date` | `date` |  | `N` |  |  |
-| `due_date` | `date` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete cascade) |
+| `direction` | `enum('payable','receivable')` |  |  |  |  |
+| `counterparty_type` | `enum('bank','person','company')` |  |  |  |  |
+| `counterparty_name` | `varchar(191)` |  |  |  |  |
+| `counterparty_contact` | `varchar(191)` | ✓ |  |  |  |
+| `counterparty_address` | `varchar(191)` | ✓ |  |  |  |
+| `loan_number` | `varchar(191)` |  |  |  |  |
+| `principal_amount` | `decimal(14,2)` |  |  |  |  |
+| `interest_rate` | `decimal(5,2)` | ✓ |  |  |  |
+| `start_date` | `date` |  |  |  |  |
+| `due_date` | `date` |  |  |  |  |
 | `repayment_frequency` | `enum('one_time','weekly','monthly','quarterly','custom')` |  | `monthly` |  |  |
 | `outstanding_balance` | `decimal(14,2)` |  | `0.00` |  |  |
 | `status` | `enum('pending','active','paid','defaulted','cancelled','rejected')` |  | `pending` |  |  |
-| `approved_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `approved_at` | `timestamp` | ✓ | `N` |  |  |
-| `rejection_reason` | `text` | ✓ | `N` |  |  |
-| `agreement_terms` | `text` | ✓ | `N` |  |  |
-| `agreement_document` | `varchar(191)` | ✓ | `N` |  |  |
-| `bank_id` | `bigint unsigned` | ✓ | `N` | IX | → `banks.id` (on delete set null) |
+| `approved_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `approved_at` | `timestamp` | ✓ |  |  |  |
+| `rejection_reason` | `text` | ✓ |  |  |  |
+| `agreement_terms` | `text` | ✓ |  |  |  |
+| `agreement_document` | `varchar(191)` | ✓ |  |  |  |
+| `bank_id` | `bigint unsigned` | ✓ |  | IX | → `banks.id` (on delete set null) |
 | `alert_days_before` | `int unsigned` |  | `3` |  |  |
-| `created_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (7)</summary>
 
@@ -1331,17 +1331,17 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `loan_id` | `bigint unsigned` |  | `N` | IX | → `loans.id` (on delete cascade) |
-| `installment_number` | `int unsigned` |  | `N` |  |  |
-| `due_date` | `date` |  | `N` | IX |  |
-| `amount_due` | `decimal(14,2)` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `loan_id` | `bigint unsigned` |  |  | IX | → `loans.id` (on delete cascade) |
+| `installment_number` | `int unsigned` |  |  |  |  |
+| `due_date` | `date` |  |  | IX |  |
+| `amount_due` | `decimal(14,2)` |  |  |  |  |
 | `amount_paid` | `decimal(14,2)` |  | `0.00` |  |  |
 | `status` | `enum('pending','partial','paid','overdue')` |  | `pending` |  |  |
-| `paid_at` | `timestamp` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `paid_at` | `timestamp` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -1354,13 +1354,13 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `loan_id` | `bigint unsigned` |  | `N` | IX | → `loans.id` (on delete cascade) |
-| `user_id` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `granted_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `granted_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `loan_id` | `bigint unsigned` |  |  | IX | → `loans.id` (on delete cascade) |
+| `user_id` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `granted_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `granted_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -1374,13 +1374,13 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `type` | `enum('income','expense')` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `name` | `varchar(191)` |  |  |  |  |
+| `type` | `enum('income','expense')` |  |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (1)</summary>
 
@@ -1392,26 +1392,26 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `bank_id` | `bigint unsigned` |  | `N` | IX | → `banks.id` (on delete cascade) |
-| `personal_category_id` | `bigint unsigned` |  | `N` | IX | → `personal_categories.id` (on delete restrict) |
-| `created_by` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `approved_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `type` | `enum('income','expense')` |  | `N` |  |  |
-| `transaction_number` | `varchar(191)` |  | `N` |  |  |
-| `title` | `varchar(191)` |  | `N` |  |  |
-| `description` | `text` | ✓ | `N` |  |  |
-| `amount` | `decimal(12,2)` |  | `N` |  |  |
-| `transaction_date` | `date` |  | `N` | IX |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `bank_id` | `bigint unsigned` |  |  | IX | → `banks.id` (on delete cascade) |
+| `personal_category_id` | `bigint unsigned` |  |  | IX | → `personal_categories.id` (on delete restrict) |
+| `created_by` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `approved_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `type` | `enum('income','expense')` |  |  |  |  |
+| `transaction_number` | `varchar(191)` |  |  |  |  |
+| `title` | `varchar(191)` |  |  |  |  |
+| `description` | `text` | ✓ |  |  |  |
+| `amount` | `decimal(12,2)` |  |  |  |  |
+| `transaction_date` | `date` |  |  | IX |  |
 | `status` | `enum('pending','approved','rejected')` |  | `pending` |  |  |
-| `reference` | `varchar(191)` | ✓ | `N` |  |  |
-| `reason` | `text` | ✓ | `N` |  |  |
+| `reference` | `varchar(191)` | ✓ |  |  |  |
+| `reason` | `text` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `approved_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `approved_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (8)</summary>
 
@@ -1430,21 +1430,21 @@ Bank and mobile-wallet accounts with a transaction ledger, payment methods mappe
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `bank_id` | `bigint unsigned` |  | `N` | IX | → `banks.id` (on delete cascade) |
-| `transaction_type` | `enum('credit','debit')` |  | `N` |  |  |
-| `source_type` | `varchar(191)` |  | `N` |  |  |
-| `source_id` | `bigint unsigned` | ✓ | `N` |  |  |
-| `amount` | `decimal(12,2)` |  | `N` |  |  |
-| `balance_before` | `decimal(14,2)` |  | `N` |  |  |
-| `balance_after` | `decimal(14,2)` |  | `N` |  |  |
-| `description` | `varchar(191)` | ✓ | `N` |  |  |
-| `reference_number` | `varchar(100)` | ✓ | `N` |  |  |
-| `recorded_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `transaction_date` | `date` |  | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `bank_id` | `bigint unsigned` |  |  | IX | → `banks.id` (on delete cascade) |
+| `transaction_type` | `enum('credit','debit')` |  |  |  |  |
+| `source_type` | `varchar(191)` |  |  |  |  |
+| `source_id` | `bigint unsigned` | ✓ |  |  |  |
+| `amount` | `decimal(12,2)` |  |  |  |  |
+| `balance_before` | `decimal(14,2)` |  |  |  |  |
+| `balance_after` | `decimal(14,2)` |  |  |  |  |
+| `description` | `varchar(191)` | ✓ |  |  |  |
+| `reference_number` | `varchar(100)` | ✓ |  |  |  |
+| `recorded_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `transaction_date` | `date` |  |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -1462,32 +1462,32 @@ Employees and payroll runs with per-employee payroll lines.
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete cascade) |
-| `user_id` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `employee_number` | `varchar(191)` |  | `N` |  |  |
-| `first_name` | `varchar(191)` |  | `N` |  |  |
-| `last_name` | `varchar(191)` |  | `N` |  |  |
-| `email` | `varchar(191)` | ✓ | `N` |  |  |
-| `phone` | `varchar(191)` | ✓ | `N` |  |  |
-| `address` | `varchar(191)` | ✓ | `N` |  |  |
-| `date_of_birth` | `date` | ✓ | `N` |  |  |
-| `gender` | `varchar(191)` | ✓ | `N` |  |  |
-| `position` | `varchar(191)` | ✓ | `N` |  |  |
-| `department` | `varchar(191)` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete cascade) |
+| `user_id` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `employee_number` | `varchar(191)` |  |  |  |  |
+| `first_name` | `varchar(191)` |  |  |  |  |
+| `last_name` | `varchar(191)` |  |  |  |  |
+| `email` | `varchar(191)` | ✓ |  |  |  |
+| `phone` | `varchar(191)` | ✓ |  |  |  |
+| `address` | `varchar(191)` | ✓ |  |  |  |
+| `date_of_birth` | `date` | ✓ |  |  |  |
+| `gender` | `varchar(191)` | ✓ |  |  |  |
+| `position` | `varchar(191)` | ✓ |  |  |  |
+| `department` | `varchar(191)` | ✓ |  |  |  |
 | `employee_type` | `enum('full_time','part_time','contract','daily')` |  | `full_time` |  |  |
-| `hire_date` | `date` | ✓ | `N` |  |  |
-| `termination_date` | `date` | ✓ | `N` |  |  |
+| `hire_date` | `date` | ✓ |  |  |  |
+| `termination_date` | `date` | ✓ |  |  |  |
 | `status` | `enum('active','inactive','terminated')` |  | `active` |  |  |
-| `basic_salary` | `text` | ✓ | `N` |  |  |
+| `basic_salary` | `text` | ✓ |  |  |  |
 | `payment_method` | `enum('cash','telebirr','bank_transfer','cheque')` |  | `bank_transfer` |  |  |
-| `bank_id` | `bigint unsigned` | ✓ | `N` | IX | → `banks.id` (on delete set null) |
-| `created_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `bank_id` | `bigint unsigned` | ✓ |  | IX | → `banks.id` (on delete set null) |
+| `created_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (7)</summary>
 
@@ -1505,24 +1505,24 @@ Employees and payroll runs with per-employee payroll lines.
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete cascade) |
-| `run_number` | `varchar(191)` |  | `N` |  |  |
-| `period_start` | `date` |  | `N` |  |  |
-| `period_end` | `date` |  | `N` |  |  |
-| `pay_date` | `date` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete cascade) |
+| `run_number` | `varchar(191)` |  |  |  |  |
+| `period_start` | `date` |  |  |  |  |
+| `period_end` | `date` |  |  |  |  |
+| `pay_date` | `date` |  |  |  |  |
 | `status` | `enum('draft','approved','paid','cancelled')` |  | `draft` |  |  |
 | `total_gross` | `decimal(14,2)` |  | `0.00` |  |  |
 | `total_deductions` | `decimal(14,2)` |  | `0.00` |  |  |
 | `total_net` | `decimal(14,2)` |  | `0.00` |  |  |
-| `created_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `approved_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `approved_at` | `timestamp` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `approved_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `approved_at` | `timestamp` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (5)</summary>
 
@@ -1538,9 +1538,9 @@ Employees and payroll runs with per-employee payroll lines.
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `payroll_run_id` | `bigint unsigned` |  | `N` | IX | → `payroll_runs.id` (on delete cascade) |
-| `employee_id` | `bigint unsigned` |  | `N` | IX | → `employees.id` (on delete restrict) |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `payroll_run_id` | `bigint unsigned` |  |  | IX | → `payroll_runs.id` (on delete cascade) |
+| `employee_id` | `bigint unsigned` |  |  | IX | → `employees.id` (on delete restrict) |
 | `basic_salary` | `decimal(14,2)` |  | `0.00` |  |  |
 | `allowances` | `decimal(14,2)` |  | `0.00` |  |  |
 | `bonus` | `decimal(14,2)` |  | `0.00` |  |  |
@@ -1548,12 +1548,12 @@ Employees and payroll runs with per-employee payroll lines.
 | `gross_pay` | `decimal(14,2)` |  | `0.00` |  |  |
 | `net_pay` | `decimal(14,2)` |  | `0.00` |  |  |
 | `payment_method` | `enum('cash','telebirr','bank_transfer','cheque')` |  | `bank_transfer` |  |  |
-| `bank_id` | `bigint unsigned` | ✓ | `N` | IX | → `banks.id` (on delete set null) |
+| `bank_id` | `bigint unsigned` | ✓ |  | IX | → `banks.id` (on delete set null) |
 | `status` | `enum('pending','paid')` |  | `pending` |  |  |
-| `paid_at` | `timestamp` | ✓ | `N` |  |  |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `paid_at` | `timestamp` | ✓ |  |  |  |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (3)</summary>
 
@@ -1571,26 +1571,26 @@ Asset register with categories and unique serial numbers.
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `branch_id` | `bigint unsigned` | ✓ | `N` | IX | → `branches.id` (on delete cascade) |
-| `asset_category_id` | `bigint unsigned` | ✓ | `N` | IX | → `asset_categories.id` (on delete set null) |
-| `asset_number` | `varchar(191)` |  | `N` |  |  |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `description` | `text` | ✓ | `N` |  |  |
-| `serial_number` | `varchar(191)` | ✓ | `N` |  |  |
-| `purchase_date` | `date` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `branch_id` | `bigint unsigned` | ✓ |  | IX | → `branches.id` (on delete cascade) |
+| `asset_category_id` | `bigint unsigned` | ✓ |  | IX | → `asset_categories.id` (on delete set null) |
+| `asset_number` | `varchar(191)` |  |  |  |  |
+| `name` | `varchar(191)` |  |  |  |  |
+| `description` | `text` | ✓ |  |  |  |
+| `serial_number` | `varchar(191)` | ✓ |  |  |  |
+| `purchase_date` | `date` | ✓ |  |  |  |
 | `purchase_cost` | `decimal(14,2)` |  | `0.00` |  |  |
 | `current_value` | `decimal(14,2)` |  | `0.00` |  |  |
 | `condition` | `enum('new','good','fair','poor','damaged')` |  | `good` |  |  |
 | `status` | `enum('in_use','in_storage','under_repair','disposed')` |  | `in_use` |  |  |
-| `location` | `varchar(191)` | ✓ | `N` |  |  |
-| `assigned_to` | `bigint unsigned` | ✓ | `N` |  |  |
-| `created_by` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `notes` | `text` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
-| `deleted_at` | `timestamp` | ✓ | `N` |  |  |
+| `location` | `varchar(191)` | ✓ |  |  |  |
+| `assigned_to` | `bigint unsigned` | ✓ |  |  |  |
+| `created_by` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `notes` | `text` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
+| `deleted_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (8)</summary>
 
@@ -1609,14 +1609,14 @@ Asset register with categories and unique serial numbers.
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `name` | `varchar(191)` |  | `N` |  |  |
-| `description` | `varchar(191)` | ✓ | `N` |  |  |
-| `color` | `varchar(191)` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `name` | `varchar(191)` |  |  |  |  |
+| `description` | `varchar(191)` | ✓ |  |  |  |
+| `color` | `varchar(191)` | ✓ |  |  |  |
 | `is_active` | `tinyint(1)` |  | `1` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (1)</summary>
 
@@ -1632,17 +1632,17 @@ Audit trail, operational alerts, asynchronous report exports and controlled data
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` | ✓ | `N` | IX | → `organizations.id` (on delete cascade) |
-| `user_id` | `bigint unsigned` | ✓ | `N` | IX | → `users.id` (on delete set null) |
-| `action` | `varchar(191)` |  | `N` | IX |  |
-| `model_type` | `varchar(191)` | ✓ | `N` | IX |  |
-| `model_id` | `bigint unsigned` | ✓ | `N` |  |  |
-| `old_values` | `json` | ✓ | `N` |  |  |
-| `new_values` | `json` | ✓ | `N` |  |  |
-| `ip_address` | `varchar(191)` | ✓ | `N` |  |  |
-| `user_agent` | `varchar(191)` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` | ✓ |  | IX | → `organizations.id` (on delete cascade) |
+| `user_id` | `bigint unsigned` | ✓ |  | IX | → `users.id` (on delete set null) |
+| `action` | `varchar(191)` |  |  | IX |  |
+| `model_type` | `varchar(191)` | ✓ |  | IX |  |
+| `model_id` | `bigint unsigned` | ✓ |  |  |  |
+| `old_values` | `json` | ✓ |  |  |  |
+| `new_values` | `json` | ✓ |  |  |  |
+| `ip_address` | `varchar(191)` | ✓ |  |  |  |
+| `user_agent` | `varchar(191)` | ✓ |  |  |  |
+| `created_at` | `timestamp` |  |  |  |  |
 
 <details><summary>Indexes (5)</summary>
 
@@ -1658,18 +1658,18 @@ Audit trail, operational alerts, asynchronous report exports and controlled data
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX | → `organizations.id` (on delete cascade) |
-| `alertable_type` | `varchar(191)` |  | `N` | IX |  |
-| `alertable_id` | `bigint unsigned` |  | `N` |  |  |
-| `channel` | `enum('email','whatsapp','in_app')` |  | `N` |  |  |
-| `recipient_user_id` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete cascade) |
-| `stage` | `enum('upcoming','due','overdue')` |  | `N` |  |  |
-| `sent_at` | `timestamp` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX | → `organizations.id` (on delete cascade) |
+| `alertable_type` | `varchar(191)` |  |  | IX |  |
+| `alertable_id` | `bigint unsigned` |  |  |  |  |
+| `channel` | `enum('email','whatsapp','in_app')` |  |  |  |  |
+| `recipient_user_id` | `bigint unsigned` |  |  | IX | → `users.id` (on delete cascade) |
+| `stage` | `enum('upcoming','due','overdue')` |  |  |  |  |
+| `sent_at` | `timestamp` | ✓ |  |  |  |
 | `status` | `enum('sent','failed','skipped')` |  | `sent` |  |  |
-| `error_message` | `varchar(191)` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `error_message` | `varchar(191)` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (4)</summary>
 
@@ -1684,19 +1684,19 @@ Audit trail, operational alerts, asynchronous report exports and controlled data
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `organization_id` | `bigint unsigned` |  | `N` | IX |  |
-| `user_id` | `bigint unsigned` |  | `N` | IX |  |
-| `label` | `varchar(191)` |  | `N` |  |  |
-| `report_type` | `varchar(191)` |  | `N` |  |  |
-| `format` | `varchar(10)` |  | `N` |  |  |
-| `params` | `json` | ✓ | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `organization_id` | `bigint unsigned` |  |  | IX |  |
+| `user_id` | `bigint unsigned` |  |  | IX |  |
+| `label` | `varchar(191)` |  |  |  |  |
+| `report_type` | `varchar(191)` |  |  |  |  |
+| `format` | `varchar(10)` |  |  |  |  |
+| `params` | `json` | ✓ |  |  |  |
 | `status` | `varchar(20)` |  | `pending` |  |  |
-| `file_path` | `varchar(191)` | ✓ | `N` |  |  |
-| `error_message` | `text` | ✓ | `N` |  |  |
-| `completed_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `file_path` | `varchar(191)` | ✓ |  |  |  |
+| `error_message` | `text` | ✓ |  |  |  |
+| `completed_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -1709,18 +1709,18 @@ Audit trail, operational alerts, asynchronous report exports and controlled data
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `user_id` | `bigint unsigned` |  | `N` | IX | → `users.id` (on delete restrict) |
-| `backup_filename` | `varchar(191)` |  | `N` |  |  |
-| `target_database` | `varchar(191)` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `user_id` | `bigint unsigned` |  |  | IX | → `users.id` (on delete restrict) |
+| `backup_filename` | `varchar(191)` |  |  |  |  |
+| `target_database` | `varchar(191)` |  |  |  |  |
 | `status` | `enum('pending','running','success','failed')` |  | `pending` |  |  |
 | `progress` | `tinyint unsigned` |  | `0` |  |  |
-| `current_step` | `varchar(191)` | ✓ | `N` |  |  |
-| `error_message` | `text` | ✓ | `N` |  |  |
-| `started_at` | `timestamp` | ✓ | `N` |  |  |
-| `finished_at` | `timestamp` | ✓ | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
-| `updated_at` | `timestamp` | ✓ | `N` |  |  |
+| `current_step` | `varchar(191)` | ✓ |  |  |  |
+| `error_message` | `text` | ✓ |  |  |  |
+| `started_at` | `timestamp` | ✓ |  |  |  |
+| `finished_at` | `timestamp` | ✓ |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
+| `updated_at` | `timestamp` | ✓ |  |  |  |
 
 <details><summary>Indexes (1)</summary>
 
@@ -1736,28 +1736,28 @@ Laravel infrastructure tables (cache, sessions, queue failures, migrations, pass
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `key` | `varchar(191)` |  | `N` | PK |  |
-| `value` | `mediumtext` |  | `N` |  |  |
-| `expiration` | `int` |  | `N` |  |  |
+| `key` | `varchar(191)` |  |  | PK |  |
+| `value` | `mediumtext` |  |  |  |  |
+| `expiration` | `int` |  |  |  |  |
 
 ### `cache_locks`
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `key` | `varchar(191)` |  | `N` | PK |  |
-| `owner` | `varchar(191)` |  | `N` |  |  |
-| `expiration` | `int` |  | `N` |  |  |
+| `key` | `varchar(191)` |  |  | PK |  |
+| `owner` | `varchar(191)` |  |  |  |  |
+| `expiration` | `int` |  |  |  |  |
 
 ### `sessions`
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `varchar(191)` |  | `N` | PK |  |
-| `user_id` | `bigint unsigned` | ✓ | `N` | IX |  |
-| `ip_address` | `varchar(45)` | ✓ | `N` |  |  |
-| `user_agent` | `text` | ✓ | `N` |  |  |
-| `payload` | `longtext` |  | `N` |  |  |
-| `last_activity` | `int` |  | `N` | IX |  |
+| `id` | `varchar(191)` |  |  | PK |  |
+| `user_id` | `bigint unsigned` | ✓ |  | IX |  |
+| `ip_address` | `varchar(45)` | ✓ |  |  |  |
+| `user_agent` | `text` | ✓ |  |  |  |
+| `payload` | `longtext` |  |  |  |  |
+| `last_activity` | `int` |  |  | IX |  |
 
 <details><summary>Indexes (2)</summary>
 
@@ -1770,12 +1770,12 @@ Laravel infrastructure tables (cache, sessions, queue failures, migrations, pass
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `bigint unsigned` |  | `N` | PK | auto_increment |
-| `uuid` | `varchar(191)` |  | `N` | UQ |  |
-| `connection` | `text` |  | `N` |  |  |
-| `queue` | `text` |  | `N` |  |  |
-| `payload` | `longtext` |  | `N` |  |  |
-| `exception` | `longtext` |  | `N` |  |  |
+| `id` | `bigint unsigned` |  |  | PK | auto_increment |
+| `uuid` | `varchar(191)` |  |  | UQ |  |
+| `connection` | `text` |  |  |  |  |
+| `queue` | `text` |  |  |  |  |
+| `payload` | `longtext` |  |  |  |  |
+| `exception` | `longtext` |  |  |  |  |
 | `failed_at` | `timestamp` |  | `CURRENT_TIMESTAMP` |  |  |
 
 <details><summary>Indexes (1)</summary>
@@ -1788,15 +1788,15 @@ Laravel infrastructure tables (cache, sessions, queue failures, migrations, pass
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `id` | `int unsigned` |  | `N` | PK | auto_increment |
-| `migration` | `varchar(191)` |  | `N` |  |  |
-| `batch` | `int` |  | `N` |  |  |
+| `id` | `int unsigned` |  |  | PK | auto_increment |
+| `migration` | `varchar(191)` |  |  |  |  |
+| `batch` | `int` |  |  |  |  |
 
 ### `password_reset_tokens`
 
 | Column | Type | Null | Default | Key | Notes |
 |---|---|:-:|---|:-:|---|
-| `email` | `varchar(191)` |  | `N` | PK |  |
-| `token` | `varchar(191)` |  | `N` |  |  |
-| `created_at` | `timestamp` | ✓ | `N` |  |  |
+| `email` | `varchar(191)` |  |  | PK |  |
+| `token` | `varchar(191)` |  |  |  |  |
+| `created_at` | `timestamp` | ✓ |  |  |  |
 

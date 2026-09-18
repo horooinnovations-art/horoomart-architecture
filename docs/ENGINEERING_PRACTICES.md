@@ -78,4 +78,4 @@ system. A self-reported "done" doesn't count.
   the framework scheduler. A failed backup or a failed off-site check alerts administrators.
 - **Backups** are daily, retained 14 days, replicated off-site and verified automatically.
 - **Configuration** lives in environment variables. Secrets are kept out of version control,
-  and sensitive columns are encrypted with a key held outside the database.
+  and selected sensitive columns are encrypted with a key held outside the database.

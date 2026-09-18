@@ -55,7 +55,7 @@ relationships, casts (including encryption at rest) and query scopes.
 | **Procurement** | Purchase orders, approval, receiving, payment status |
 | **Supplier** | Supplier master data |
 | **Sales** | POS sales, credit sales, instalment collections |
-| **Customer** | Customer records (contact details encrypted at rest) |
+| **Customer** | Customer records (phone number encrypted at rest) |
 | **Financial** | Banks & wallets, ledger transactions, payment methods, transfers, expenses, personal finance |
 | **Loans** | Loans, instalment schedules, authorized users |
 | **HR** | Employees, payroll runs and lines |

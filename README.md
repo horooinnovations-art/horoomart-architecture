@@ -51,8 +51,7 @@ source code is proprietary and is not included.
 - **Finance.** Bank and mobile-wallet accounts (e.g. Telebirr) with a running-balance ledger,
   payment-method-to-account mapping, inter-account transfers with approval, one-off and
   recurring expenses, loans with instalment schedules, and financial reports.
-- **HR & payroll.** Employee records with salaries encrypted at rest, and payroll runs that post
-  to the ledger.
+- **HR & payroll.** Employee records and payroll runs that post to the ledger.
 - **Fixed assets.** An asset register with categories and serial-number tracking.
 - **Analytics.** Sales trends, anomaly detection and per-item demand forecasting (a regularized
   regression model trained on each organization's own sales history).

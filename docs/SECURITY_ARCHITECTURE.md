@@ -33,17 +33,24 @@ front of it might fail.
 
 ## Data protection
 
-**Encryption at rest** (application-level, AES-256 via the framework's encrypter) for the
-fields whose disclosure would cause direct harm:
+**Field-level encryption** (application-level, AES-256 via the framework's encrypter) covers
+these fields:
 
-| Data | Field |
+| Record | Encrypted fields |
 |---|---|
 | Bank accounts | account number, SWIFT code |
-| Employees & users | salary |
+| Employee and user records | base salary |
 | Customers | phone number |
 | Users | two-factor secret |
 
-A database dump alone does not reveal these values; the application key is also required.
+For these fields, a copy of the database alone is not enough to read the values; the
+application key, held outside the database, is also required.
+
+Other personal and operational data is **not** encrypted at the field level. That includes
+contact details other than the fields above, and the pay amounts recorded on individual
+payroll lines. It is protected by authentication, role-based permissions, tenant isolation
+and restricted database access. Extending field-level encryption to payroll line amounts is
+planned.
 
 **Audit logs redact sensitive fields.** Passwords, remember tokens, two-factor secrets and
 salary values are stripped from the before/after snapshots written to the audit trail, so
