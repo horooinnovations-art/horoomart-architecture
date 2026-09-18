@@ -87,5 +87,5 @@ closure.
 
 ## Reporting a vulnerability
 
-If you believe you have found a security issue in HOROOMART, please contact HOROO Innovations
-privately through the organization's GitHub profile rather than opening a public issue.
+If you believe you have found a security issue in HOROOMART, please report it privately as
+described in [SECURITY.md](../SECURITY.md). Never open a public issue for it.

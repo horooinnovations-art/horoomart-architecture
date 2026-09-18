@@ -1,0 +1,38 @@
+name: Documentation error
+description: Report an error, inconsistency or broken link in the documentation
+title: "[Docs] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the documentation accurate.
+        **Security vulnerabilities must not be reported here.** See SECURITY.md.
+  - type: input
+    id: location
+    attributes:
+      label: Where is the problem?
+      description: The document and section, ideally a link to the exact line.
+      placeholder: database/ERD.md - Finance & Treasury diagram
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of problem
+      options:
+        - Incorrect or outdated statement
+        - Diagram does not match the data dictionary
+        - Two documents contradict each other
+        - Broken link or rendering problem
+        - Typo or unclear wording
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What is wrong, and what should it say?
+      description: Quote the current text if possible and describe the correction.
+    validations:
+      required: true

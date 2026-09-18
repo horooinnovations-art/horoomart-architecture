@@ -1,0 +1,23 @@
+name: Design question
+description: Ask about a design decision or how part of the system works
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Questions about the architecture, database design or engineering practices are welcome.
+        Note that the application source code is proprietary and not shared.
+  - type: input
+    id: topic
+    attributes:
+      label: Which part of the documentation is this about?
+      placeholder: docs/FINANCIAL_INTEGRITY.md - Idempotency
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
